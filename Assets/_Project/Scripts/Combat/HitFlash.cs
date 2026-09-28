@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using DexHigh.Core;
 
 namespace DexHigh.Combat
 {
@@ -11,13 +12,27 @@ namespace DexHigh.Combat
 
         MaterialPropertyBlock block;
         Coroutine running;
+        Health health;
 
         void Awake()
         {
             block = new MaterialPropertyBlock();
             if (renderers == null || renderers.Length == 0)
                 renderers = GetComponentsInChildren<Renderer>();
+            health = GetComponent<Health>();
         }
+
+        void OnEnable()
+        {
+            if (health != null) health.OnDamaged.AddListener(HandleDamaged);
+        }
+
+        void OnDisable()
+        {
+            if (health != null) health.OnDamaged.RemoveListener(HandleDamaged);
+        }
+
+        void HandleDamaged(DamageInfo info) => Flash();
 
         public void Flash()
         {

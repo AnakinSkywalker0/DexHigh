@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e149070a23df4d4a91e66522b9ab65e, type: 3}
   m_Name: Fly
   m_EditorClassIdentifier: Assembly-CSharp::DexHigh.Combat.AbilityDefinition
-  abilityName: '"Fly Attack"'
+  abilityName: Fly Attack
   icon: {fileID: 0}
   damage: 28
   cooldown: 8
   range: 6
   coneAngle: 60
   shape: 2
-  animatorTrigger: '"Attack_Fly"'
+  animatorTrigger: Attack_Fly
   castDelay: 0.3
   leapDuration: 0.6
   knockbackForce: 9

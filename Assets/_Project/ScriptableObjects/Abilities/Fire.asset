@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e149070a23df4d4a91e66522b9ab65e, type: 3}
   m_Name: Fire
   m_EditorClassIdentifier: Assembly-CSharp::DexHigh.Combat.AbilityDefinition
-  abilityName: '"Fire Breath"'
+  abilityName: Fire Breath
   icon: {fileID: 0}
   damage: 12
   cooldown: 4
   range: 8
   coneAngle: 60
   shape: 0
-  animatorTrigger: '"Attack_Fire"'
+  animatorTrigger: Attack_Fire
   castDelay: 0.35
   leapDuration: 0.6
   knockbackForce: 2

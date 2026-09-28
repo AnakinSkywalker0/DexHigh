@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e149070a23df4d4a91e66522b9ab65e, type: 3}
   m_Name: Tail
   m_EditorClassIdentifier: Assembly-CSharp::DexHigh.Combat.AbilityDefinition
-  abilityName: '"Tail Swipe"'
+  abilityName: Tail Swipe
   icon: {fileID: 0}
   damage: 18
   cooldown: 2.5
   range: 2.5
   coneAngle: 60
   shape: 1
-  animatorTrigger: '"Attack_Tail"'
+  animatorTrigger: Attack_Tail
   castDelay: 0.2
   leapDuration: 0.6
   knockbackForce: 6

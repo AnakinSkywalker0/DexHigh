@@ -148,7 +148,15 @@ namespace DexHigh.Combat
                     damageable.TakeDamage(new DamageInfo(def.damage, hit.ClosestPoint(origin), dir, gameObject));
 
                 if (def.knockbackForce > 0f && hit.transform.root.TryGetComponent<Knockback>(out var knockback))
-                    knockback.ApplyKnockback(dir * def.knockbackForce);
+                {
+                    // Flatten to the horizontal plane — at close range the raw hit direction is
+                    // dominated by the small vertical offset between the origin point and the
+                    // target's collider surface, which launched targets almost straight up.
+                    Vector3 knockDir = hit.transform.position - origin;
+                    knockDir.y = 0f;
+                    knockDir = knockDir.sqrMagnitude > 0.0001f ? knockDir.normalized : forward;
+                    knockback.ApplyKnockback(knockDir * def.knockbackForce);
+                }
             }
         }
     }

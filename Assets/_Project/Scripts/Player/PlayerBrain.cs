@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using DexHigh.Combat;
 using DexHigh.Core;
 
@@ -37,8 +38,9 @@ namespace DexHigh.Player
 
         void HandleMovement()
         {
-            float h = Input.GetAxisRaw("Horizontal");
-            float v = Input.GetAxisRaw("Vertical");
+            var kb = Keyboard.current;
+            float h = (kb.dKey.isPressed ? 1f : 0f) - (kb.aKey.isPressed ? 1f : 0f);
+            float v = (kb.wKey.isPressed ? 1f : 0f) - (kb.sKey.isPressed ? 1f : 0f);
 
             Vector3 input = new Vector3(h, 0f, v);
             if (input.sqrMagnitude > 1f) input.Normalize();
@@ -65,9 +67,10 @@ namespace DexHigh.Player
         {
             if (abilities == null) return;
 
-            if (Input.GetKeyDown(KeyCode.Alpha1)) abilities.TryUse(0);
-            else if (Input.GetKeyDown(KeyCode.Alpha2)) abilities.TryUse(1);
-            else if (Input.GetKeyDown(KeyCode.Alpha3)) abilities.TryUse(2);
+            var kb = Keyboard.current;
+            if (kb.digit1Key.wasPressedThisFrame) abilities.TryUse(0);
+            else if (kb.digit2Key.wasPressedThisFrame) abilities.TryUse(1);
+            else if (kb.digit3Key.wasPressedThisFrame) abilities.TryUse(2);
         }
     }
 }

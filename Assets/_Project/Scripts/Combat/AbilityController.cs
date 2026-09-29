@@ -1,15 +1,16 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using DexHigh.Core;
 
 namespace DexHigh.Combat
 {
-    [RequireComponent(typeof(Animator))]
     public class AbilityController : MonoBehaviour
     {
         [SerializeField] AbilityDefinition[] abilities = new AbilityDefinition[3];
         [SerializeField] LayerMask targetLayers = ~0;
+        [SerializeField, Min(0f)] float damageMultiplier = 1f; // difficulty knob: scales every ability this dragon uses
 
         Animator animator;
         float[] cooldownRemaining;
@@ -22,7 +23,7 @@ namespace DexHigh.Combat
 
         void Awake()
         {
-            animator = GetComponent<Animator>();
+            animator = GetComponentInChildren<Animator>(); // lives on the model child
             cooldownRemaining = new float[abilities.Length];
         }
 
@@ -56,7 +57,7 @@ namespace DexHigh.Combat
             OnCooldownChanged?.Invoke(slot, def.cooldown, def.cooldown);
             OnAbilityUsed?.Invoke(slot);
 
-            if (!string.IsNullOrEmpty(def.animatorTrigger))
+            if (animator != null && !string.IsNullOrEmpty(def.animatorTrigger))
                 animator.SetTrigger(def.animatorTrigger);
 
             StartCoroutine(RunAbility(def));
@@ -115,7 +116,8 @@ namespace DexHigh.Combat
             if (def.vfxPrefab != null)
             {
                 Quaternion rot = forward.sqrMagnitude > 0.0001f ? Quaternion.LookRotation(forward) : Quaternion.identity;
-                Instantiate(def.vfxPrefab, origin + Vector3.up, rot);
+                var vfx = Instantiate(def.vfxPrefab, origin + Vector3.up, rot);
+                Destroy(vfx, def.vfxLifetime);
             }
 
             if (def.sfxClip != null)
@@ -130,9 +132,15 @@ namespace DexHigh.Combat
 
             Collider[] hits = Physics.OverlapSphere(origin, radius, targetLayers);
 
+            // A dragon has several colliders (body + CharacterController); count each target once per hit.
+            var alreadyHit = new HashSet<Transform>();
+
             foreach (var hit in hits)
             {
-                if (hit.transform.root == transform.root) continue;
+                Transform targetRoot = hit.transform.root;
+                if (targetRoot == transform.root) continue;
+                if (targetRoot.TryGetComponent<Health>(out var targetHealth) && targetHealth.IsInvulnerable) continue; // dashed through it
+                if (!alreadyHit.Add(targetRoot)) continue;
 
                 if (def.shape == AbilityShape.Cone)
                 {
@@ -145,7 +153,7 @@ namespace DexHigh.Combat
                 Vector3 dir = (hit.transform.position - origin).normalized;
 
                 if (hit.transform.root.TryGetComponent<IDamageable>(out var damageable))
-                    damageable.TakeDamage(new DamageInfo(def.damage, hit.ClosestPoint(origin), dir, gameObject));
+                    damageable.TakeDamage(new DamageInfo(def.damage * damageMultiplier, hit.ClosestPoint(origin), dir, gameObject));
 
                 if (def.knockbackForce > 0f && hit.transform.root.TryGetComponent<Knockback>(out var knockback))
                 {

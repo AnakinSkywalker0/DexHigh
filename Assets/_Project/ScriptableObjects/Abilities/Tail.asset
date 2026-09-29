@@ -20,8 +20,9 @@ MonoBehaviour:
   coneAngle: 60
   shape: 1
   animatorTrigger: Attack_Tail
-  castDelay: 0.2
+  castDelay: 0.5
   leapDuration: 0.6
   knockbackForce: 6
-  vfxPrefab: {fileID: 0}
-  sfxClip: {fileID: 0}
+  vfxPrefab: {fileID: 1969126547932633971, guid: 256e847a5f7bfbd48ba170a4ccfc3d88, type: 3}
+  vfxLifetime: 1
+  sfxClip: {fileID: 8300000, guid: 94bc8546fe222904c9fd6e0438c1b6fc, type: 3}

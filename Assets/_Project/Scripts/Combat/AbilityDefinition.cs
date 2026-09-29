@@ -30,6 +30,8 @@ namespace DexHigh.Combat
 
         public float knockbackForce = 4f;
         public GameObject vfxPrefab;
+        [Tooltip("Seconds before the spawned VFX instance is destroyed.")]
+        public float vfxLifetime = 2f;
         public AudioClip sfxClip;
     }
 }

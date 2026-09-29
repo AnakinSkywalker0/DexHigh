@@ -92,7 +92,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &7892724694521796714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,6 +105,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d6d741c27195b4438aa0395705c9c6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DexHigh.Player.PlayerBrain
-  moveSpeed: 5
+  moveSpeed: 6
+  acceleration: 45
   rotationSpeed: 720
   gravity: -20
+  dashSpeed: 11.7
+  dashDuration: 0.215
+  dashCooldown: 1.1
+  dashInvulnerability: 0.3
+  lockTarget: {fileID: 0}
+  lockMarkerPrefab: {fileID: 1256571784236324520, guid: 9a637671f6f52e3458b8d676fe31d97f, type: 3}
+  lockedOn: 1

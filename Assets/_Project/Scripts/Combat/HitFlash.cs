@@ -7,8 +7,8 @@ namespace DexHigh.Combat
     public class HitFlash : MonoBehaviour
     {
         [SerializeField] Renderer[] renderers;
-        [SerializeField] Color flashColor = Color.white;
-        [SerializeField] float flashDuration = 0.12f;
+        [SerializeField] Color flashColor = new Color(1f, 0.15f, 0.15f);
+        [SerializeField] float flashDuration = 0.2f;
 
         MaterialPropertyBlock block;
         Coroutine running;
@@ -57,6 +57,7 @@ namespace DexHigh.Combat
                 if (on)
                 {
                     block.SetColor("_BaseColor", flashColor);
+                    block.SetColor("_EmissionColor", flashColor * 2f); // pops even on dark textures
                     r.SetPropertyBlock(block);
                 }
                 else

@@ -21,7 +21,8 @@ MonoBehaviour:
   shape: 2
   animatorTrigger: Attack_Fly
   castDelay: 0.3
-  leapDuration: 0.6
+  leapDuration: 1.6
   knockbackForce: 9
-  vfxPrefab: {fileID: 0}
-  sfxClip: {fileID: 0}
+  vfxPrefab: {fileID: 5137886540619595305, guid: c2082ebb636e5ed4187b9b25acbd924c, type: 3}
+  vfxLifetime: 2.2
+  sfxClip: {fileID: 8300000, guid: 447e97f44e7d0fd4eb6ddec82c319992, type: 3}

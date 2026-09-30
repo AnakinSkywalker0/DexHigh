@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tail
   m_EditorClassIdentifier: Assembly-CSharp::DexHigh.Combat.AbilityDefinition
   abilityName: Tail Swipe
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 3ab3bfa8387432048843a914c973269e, type: 3}
   damage: 18
   cooldown: 2.5
   range: 2.5
@@ -25,4 +25,4 @@ MonoBehaviour:
   knockbackForce: 6
   vfxPrefab: {fileID: 1969126547932633971, guid: 256e847a5f7bfbd48ba170a4ccfc3d88, type: 3}
   vfxLifetime: 1
-  sfxClip: {fileID: 8300000, guid: 94bc8546fe222904c9fd6e0438c1b6fc, type: 3}
+  sfxClip: {fileID: 8300000, guid: 78ac039368cc35848869f57da3a98156, type: 3}

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using DexHigh.Core;
+using DexHigh.Systems;
 
 namespace DexHigh.Combat
 {
@@ -121,7 +122,7 @@ namespace DexHigh.Combat
             }
 
             if (def.sfxClip != null)
-                AudioSource.PlayClipAtPoint(def.sfxClip, origin);
+                Sfx.Play2D(def.sfxClip, 0.8f, 0.04f);
 
             float radius = def.shape switch
             {

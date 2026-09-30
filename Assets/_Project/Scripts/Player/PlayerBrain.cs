@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using DexHigh.Combat;
 using DexHigh.Core;
+using DexHigh.Systems;
 
 namespace DexHigh.Player
 {
@@ -20,6 +21,7 @@ namespace DexHigh.Player
         [SerializeField] float dashDuration = 0.215f;
         [SerializeField] float dashCooldown = 1.1f;
         [SerializeField] float dashInvulnerability = 0.3f;   // dodge window covers the whole dash
+        [SerializeField] AudioClip dashSound;
 
         [Header("Lock-on")]
         [SerializeField] Transform lockTarget;      // auto-found if left empty
@@ -120,6 +122,7 @@ namespace DexHigh.Player
             dashEndTime = Time.time + dashDuration;
             nextDashTime = Time.time + dashCooldown;
             if (health != null) health.GrantInvulnerability(dashInvulnerability);
+            Sfx.Play2D(dashSound, 0.7f);
         }
 
         void HandleMovement()

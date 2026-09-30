@@ -113,6 +113,7 @@ MonoBehaviour:
   dashDuration: 0.215
   dashCooldown: 1.1
   dashInvulnerability: 0.3
+  dashSound: {fileID: 8300000, guid: afa6e8b4765806d44bfbffdbf5f0a6f5, type: 3}
   lockTarget: {fileID: 0}
   lockMarkerPrefab: {fileID: 1256571784236324520, guid: 9a637671f6f52e3458b8d676fe31d97f, type: 3}
   lockedOn: 1

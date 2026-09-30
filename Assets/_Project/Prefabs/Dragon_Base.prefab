@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4208087837858921609}
   - component: {fileID: 7046086711844776354}
   - component: {fileID: 2655039844682854137}
+  - component: {fileID: 556379470656013494}
   m_Layer: 0
   m_Name: Dragon_Base
   m_TagString: Untagged
@@ -240,6 +241,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b73e5eeb9645794899c885614df7801, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DexHigh.Combat.DragonAnimator
+--- !u!114 &556379470656013494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3678817443890940926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83ab2df660a792c41b3faaaa622dd038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DexHigh.Combat.HitSound
+  clips:
+  - {fileID: 8300000, guid: bfaf679d91b9c4a4f972870bbc1563de, type: 3}
+  - {fileID: 8300000, guid: a8815bafbc2c10b45a08bed595f6ee86, type: 3}
+  volume: 0.9
 --- !u!1 &6339468691124921325
 GameObject:
   m_ObjectHideFlags: 0

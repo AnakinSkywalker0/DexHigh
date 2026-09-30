@@ -25,4 +25,4 @@ MonoBehaviour:
   knockbackForce: 2
   vfxPrefab: {fileID: 5461687810119872646, guid: dd0ee33fc57c5a142bbb11f05e61ddf0, type: 3}
   vfxLifetime: 1.6
-  sfxClip: {fileID: 8300000, guid: af0e33a1b1f847f4f80e106592282d96, type: 3}
+  sfxClip: {fileID: 8300000, guid: 36575a04b9f8b2d459dcd9d1dac33ae1, type: 3}

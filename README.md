@@ -1,4 +1,4 @@
-# Dragon Arena — Dexhigh Junior Unity Developer Assessment
+# Dragon Arena 
 
 A small 2.5D top-down battle: one player-controlled dragon against one AI-controlled dragon in an
 enclosed arena, with three abilities each, health/cooldown UI, hit feedback and a Winner Screen with Restart.

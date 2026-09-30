@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fly
   m_EditorClassIdentifier: Assembly-CSharp::DexHigh.Combat.AbilityDefinition
   abilityName: Fly Attack
-  icon: {fileID: 21300000, guid: 14984e2305583164ca801c0cec4bccaa, type: 3}
+  icon: {fileID: 21300000, guid: 68703c8b6c24ca0448d6df3e5e171649, type: 3}
   damage: 28
   cooldown: 8
   range: 6

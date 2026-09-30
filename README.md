@@ -75,8 +75,9 @@ Damage is applied on the attack's impact frame (after a per-ability cast delay),
 | **Dragon for Boss Monster PBR** (imported as `FourEvilDragonsPBR`; SoulEater dragon, Blue/Red skins, animations) | Player and enemy dragons | Unity Asset Store, by Dungeon Mason |
 | **Free Fire VFX - URP** | Fire/impact particle effects and fire sound loops | Unity Asset Store, by Vefects (vefects.com) |
 | **BrawlBattle Arena Freebie** (imported as `Brawl Arena`) | Arena floor, wall tiles, rocks, bones, skulls, chests | Unity Asset Store, by "Solo Player" (assetstore.unity.com/packages/slug/295013) |
+| **500 Free Skill Icons** | Ability icons (skill_037 Fire, skill_251 Tail, skill_124 Fly) | Unity Asset Store, by CatRabbit |
 
-The hit/dash/tail sound effects (`Assets/_Project/Audio`) and the three ability icons (`Assets/_Project/Art/Icons`) are original, generated for this project.
+The hit/dash/tail sound effects (`Assets/_Project/Audio`) are original, generated for this project.
 No paid or ripped assets were used. Each pack remains under its own Asset Store license.
 Everything under `Assets/_Project/` was written for this assessment.
 

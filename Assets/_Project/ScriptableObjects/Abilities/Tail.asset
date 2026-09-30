@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tail
   m_EditorClassIdentifier: Assembly-CSharp::DexHigh.Combat.AbilityDefinition
   abilityName: Tail Swipe
-  icon: {fileID: 21300000, guid: 3ab3bfa8387432048843a914c973269e, type: 3}
+  icon: {fileID: 21300000, guid: 64bd6fcd22dcdb1488b50b0c02849b95, type: 3}
   damage: 18
   cooldown: 2.5
   range: 2.5
